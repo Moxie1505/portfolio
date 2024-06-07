@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Mon Portfolio - À Propos</title>
   <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="theme.js"></script>
 </head>
 <body>
   <header>
@@ -44,24 +45,6 @@
       Je suis convaincu que chaque projet est une opportunité d'apprentissage et de croissance, et je suis impatient de contribuer à façonner l'avenir numérique avec créativité et engagement.</p>
   </section>
 
-  <script>
-  function toggleTheme() {
-    document.documentElement.classList.toggle('light-theme');
-    const isLightTheme = document.documentElement.classList.contains('light-theme');
-    localStorage.setItem('theme', isLightTheme ? 'light' : 'dark');
-  }
-
-  document.getElementById('theme-toggle').addEventListener('click', function() {
-    toggleTheme();
-  });
-
-  document.addEventListener('DOMContentLoaded', function() {
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'light') {
-      toggleTheme();
-    }
-  });
-</script>
 
   <footer>
     <p>&copy; 2024 Mon Portfolio. Tous droits réservés.</p>
