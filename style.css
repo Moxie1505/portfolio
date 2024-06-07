@@ -199,7 +199,7 @@ nav ul li {
   margin-bottom: 40px;
 }
 
-.hero-content .btn , nav ul li .btn{
+.hero-content .btn , nav ul li button{
   display: inline-block;
   padding: 10px 20px;
   background-color: var(--highlight-color);
