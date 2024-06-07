@@ -215,6 +215,10 @@
         event.target.style.display = 'none';
       }
     }
+
+    document.getElementById('theme-toggle').addEventListener('click', function() {
+      document.documentElement.classList.toggle('light-theme');
+    });
   </script>
 </body>
 </html>
