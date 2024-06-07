@@ -7,6 +7,7 @@ function toggleTheme() {
 document.addEventListener('DOMContentLoaded', function() {
   const savedTheme = localStorage.getItem('theme');
   if (savedTheme === 'light') {
-    toggleTheme();
+    document.documentElement.classList.add('light-theme');
   }
+  document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
 });
