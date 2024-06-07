@@ -19,41 +19,40 @@
   </header>
 
   <section id="contact">
-  
-    <div class="contact-info">
-      <div class="contact-item">
-        <h3>Numéro de téléphone :</h3>
-        <p>07 67 47 65 02</p>
-      </div>
-      <div class="contact-item">
-        <h3>Email :</h3>
-        <p>djibril.miliani@etu.univ-grenoble-alpes.fr</p>
-      </div>
-      <div class="contact-item">
-        <h3>Adresse :</h3>
-        <p>3 allée François Truffaut<br>Echirolles, 38130</p>
-      </div>
+  <div class="contact-info">
+    <div class="contact-item">
+      <h3>Numéro de téléphone :</h3>
+      <p>07 67 47 65 02</p>
     </div>
-    <form action="#" method="post">
-      <label for="name">Nom :</label>
-      <input type="text" id="name" name="name" required>
-      
-      <label for="email">Email :</label>
-      <input type="email" id="email" name="email" required>
-      
-      <label for="message">Message :</label>
-      <textarea id="message" name="message" required></textarea>
-      
-      <input type="submit" value="Envoyer">
-    </form>
-  </section>
+    <div class="contact-item">
+      <h3>Email :</h3>
+      <p>djibril.miliani@etu.univ-grenoble-alpes.fr</p>
+    </div>
+    <div class="contact-item">
+      <h3>Adresse :</h3>
+      <p>3 allée François Truffaut<br>Echirolles, 38130</p>
+    </div>
+  </div>
+  <form id="contactForm" action="#" method="post">
+    <label for="name">Nom :</label>
+    <input type="text" id="name" name="name" required>
+    
+    <label for="email">Email :</label>
+    <input type="email" id="email" name="email" required>
+    
+    <label for="message">Message :</label>
+    <textarea id="message" name="message" required></textarea>
+    
+    <input type="submit" value="Envoyer">
+  </form>
+</section>
 
   <script>
   document.getElementById('contactForm').addEventListener('submit', function(event) {
     event.preventDefault();  
     this.reset();  
   });
-</script>
+  </script>
 
   <footer>
     <p>&copy; 2024 Mon Portfolio. Tous droits réservés.</p>
