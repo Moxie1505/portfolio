@@ -7,7 +7,7 @@
   --font-primary: 'Roboto', sans-serif;
 }
 
-/*thème clair */
+/* thème clair */
 :root.light-theme {
   --primary-color: #ffffff;
   --secondary-color: #f0f0f0;
@@ -86,6 +86,24 @@ nav ul li a:hover {
   transform: translateY(-3px) scale(1.1);
 }
 
+.hero-content .btn,
+nav ul li button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: var(--highlight-color);
+  color: #000;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: transform 0.3s, background-color 0.3s;
+  z-index: 4;
+  position: relative;
+}
+
+.hero-content .btn:hover,
+nav ul li button:hover {
+  background-color: darken(var(--highlight-color), 10%);
+  transform: scale(1.05);
+}
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
@@ -102,6 +120,10 @@ body {
   color: var(--text-color);
   transition: all 0.3s ease-in-out;
   width: 100%;
+}
+
+body.no-scroll {
+  overflow: hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -199,23 +221,6 @@ nav ul li {
   margin-bottom: 40px;
 }
 
-.hero-content .btn , nav ul li button{
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: var(--highlight-color);
-  color: #000;
-  text-decoration: none;
-  border-radius: 5px;
-  transition: transform 0.3s, background-color 0.3s;
-  z-index: 4;
-  position: relative;
-}
-
-.hero-content .btn:hover {
-  background-color: darken(var(--highlight-color), 10%);
-  transform: scale(1.05);
-}
-
 footer {
   background-color: var(--secondary-color);
   color: var(--text-color);
@@ -249,7 +254,6 @@ footer:hover {
 .social-icons img:hover {
   transform: scale(1.2);
 }
-
 
 #contact {
   display: flex;
@@ -308,10 +312,9 @@ form input[type="submit"]:hover {
   margin: 20px;
 }
 
-section#projets{
+section#projets {
   margin: 30px;
 }
-
 
 nav ul li a {
   color: var(--text-color);
