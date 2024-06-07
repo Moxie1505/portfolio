@@ -47,7 +47,13 @@
       <input type="submit" value="Envoyer">
     </form>
   </section>
-  
+
+  <script>
+  document.getElementById('contactForm').addEventListener('submit', function(event) {
+    event.preventDefault();  
+    this.reset();  
+  });
+</script>
 
   <footer>
     <p>&copy; 2024 Mon Portfolio. Tous droits réservés.</p>
