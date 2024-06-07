@@ -278,6 +278,7 @@ form input, form textarea {
   border: 1px solid #ccc;
   border-radius: 5px;
   width: 100%;
+  resize: vertical;
 }
 
 form input[type="submit"] {
@@ -328,7 +329,3 @@ nav ul li a:hover::after {
   left: 0;
   background: var(--highlight-color);
 }
-
-textarea {
-    resize: vertical;
-  }
