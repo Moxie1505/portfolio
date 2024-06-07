@@ -329,3 +329,6 @@ nav ul li a:hover::after {
   background: var(--highlight-color);
 }
 
+textarea {
+    resize: vertical;
+  }
