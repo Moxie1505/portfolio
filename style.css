@@ -1,3 +1,20 @@
+:root {
+  --primary-color: hsl(240, 2%, 25%);
+  --secondary-color: #2c302e;
+  --background-color: #333;
+  --text-color: #ffffff;
+  --highlight-color: #ff4081;
+  --font-primary: 'Roboto', sans-serif;
+}
+
+/*thème clair */
+:root.light-theme {
+  --primary-color: #ffffff;
+  --secondary-color: #f0f0f0;
+  --background-color: #ffffff;
+  --text-color: #000000;
+  --highlight-color: #007bff;
+}
 
 .popup {
   display: none; 
@@ -69,14 +86,6 @@ nav ul li a:hover {
   transform: translateY(-3px) scale(1.1);
 }
 
-:root {
-  --primary-color: hsl(240, 2%, 25%);
-  --secondary-color: #2c302e;
-  --background-color: #333;
-  --text-color: #ffffff;
-  --highlight-color: #ff4081;
-  --font-primary: 'Roboto', sans-serif;
-}
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
