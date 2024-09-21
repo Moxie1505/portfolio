@@ -1,3 +1,4 @@
+
 function enterPortfolio() {
     const landingPage = document.getElementById('landing-page');
     const portfolioContent = document.getElementById('portfolio-content');
@@ -17,26 +18,20 @@ function enterPortfolio() {
 
 function openPopup(id) {
     var popup = document.getElementById(id);
-    popup.classList.add('show');
     popup.style.display = 'block';
     document.body.classList.add('no-scroll');
-}
+  }
 
-function closePopup(id) {
+  function closePopup(id) {
     var popup = document.getElementById(id);
-    popup.classList.remove('show');
-    setTimeout(() => {
-        popup.style.display = 'none';
-        document.body.classList.remove('no-scroll');
-    }, 300); // Correspond à la durée de la transition
-}
+    popup.style.display = 'none';
+    document.body.classList.remove('no-scroll');
+  }
 
-window.onclick = function(event) {
+  window.onclick = function(event) {
     if (event.target.classList.contains('popup')) {
-        event.target.classList.remove('show');
-        setTimeout(() => {
-            event.target.style.display = 'none';
-            document.body.classList.remove('no-scroll');
-        }, 300);
+      event.target.style.display = 'none';
+      document.body.classList.remove('no-scroll');
     }
-};
+  }
+
