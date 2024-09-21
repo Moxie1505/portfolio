@@ -55,19 +55,72 @@ body {
     font-size: 1.5em;
 }
 
-.intro-text button {
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: var(--button-background-color);
-    color: white;
+.intro-text .wave-btn {
     border: none;
-    border-radius: 5px;
+    color: rgb(0, 0, 0);
     cursor: pointer;
+    padding: 0.75rem 1.8rem;
+    border-radius: 50px;
+    position: relative;
+    overflow: hidden;    
+    margin-top: 20px;
+    
 }
 
-.intro-text button:hover {
-    background-color: var(--button-hover-background-color);
+.intro-text .wave {
+    background-color: var(--button-background-color);
+    width: 100%;
+    height: 3rem;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    box-shadow: inset 5px -5px 22px var(--button-hover-background-color), inset 5px -5px 22px var(--button-);
 }
+.wave::before,
+.wave::after {
+    content: "";
+    position: absolute;
+    top: -12.75rem;
+    left: -2.575rem;
+    border-radius: 40%;
+    animation: animate 6s linear infinite;
+    transition: 0.5s ease-in-out;
+}
+
+.wave::after{
+    width: 250%;
+    height: 10rem;
+    background: #f4f4f4;
+    animation-delay: 2s;
+}
+.wave::before{
+    width: 19rem;
+    height: 12rem;
+    background: #777;
+    animation-delay: 1.8s;
+}
+
+.intro-text .wave-btn:hover .wave::after, 
+.intro-text .wave-btn:hover .wave::before {
+    height: 200%;
+    width: 200%;
+}
+
+.wave-text {
+    position: relative;
+    font-size: 1.375rem;
+    letter-spacing: 0.125rem;
+}
+
+@keyframes animate {
+    form {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
 
 .hidden {
     display: none;
