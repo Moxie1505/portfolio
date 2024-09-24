@@ -13,7 +13,7 @@ function enterPortfolio() {
         setTimeout(() => {
             portfolioContent.classList.add('show');
         }, 100); 
-    }, 1000);
+    }, 400);
 }
 
 function openPopup(id) {
