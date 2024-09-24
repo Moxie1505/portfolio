@@ -1,17 +1,18 @@
 function enterPortfolio() {
-  const landingPage = document.getElementById('landing-page');
-  const portfolioContent = document.getElementById('portfolio-content');
-
-  landingPage.classList.add('reduced');
-
-  setTimeout(() => {
-    landingPage.style.display = 'none';  
-    portfolioContent.style.display = 'block';  
-
+    const landingPage = document.getElementById('landing-page');
+    const portfolioContent = document.getElementById('portfolio-content');
+    
+    landingPage.style.opacity = 0;
+    landingPage.style.transform = 'scale(0.9)';
+    
     setTimeout(() => {
-      portfolioContent.classList.add('show');
-    }, 100);
-  }, 1000);  
+        landingPage.style.display = 'none';
+        portfolioContent.style.display = 'block';
+        
+        setTimeout(() => {
+            portfolioContent.classList.add('show');
+        }, 100); 
+    }, 400);
 }
 
 function openPopup(id) {

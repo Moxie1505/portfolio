@@ -90,7 +90,7 @@ body {
     top: -12.75rem;
     left: -2.575rem;
     border-radius: 40%;
-    animation: animate 6s linear infinite;
+    animation: animate 5s linear infinite;
     transition: 0.5s ease-in-out;
 }
 
@@ -98,14 +98,14 @@ body {
     width: 250%;
     height: 10rem;
     background: #f4f4f4;
-    animation-delay: 2s;
+    animation-delay: 0.7s;
 }
 
 .wave::before {
     width: 19rem;
     height: 12rem;
     background: #777;
-    animation-delay: 1.8s;
+    animation-delay: 0.5s;
 }
 
 .intro-text .wave-btn:hover .wave::after, 
