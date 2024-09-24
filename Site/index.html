@@ -31,7 +31,6 @@
             </nav>
             <div class="header-content">
                 <h1>Bienvenue sur mon Portfolio</h1>
-                <p>Développeur passionné, prêt à relever de nouveaux défis</p>
             </div>
         </header>
 
@@ -72,6 +71,7 @@
 
         <section id="projects">
             <h2>Projets</h2>
+
             <div class="projects-grid">
                 <div class="project" onclick="openPopup('popup1')">
                     <h3>Application Gestion d'événement</h3>
@@ -98,45 +98,58 @@
                     <p>Dans le cadre des SAE1.05 et 1.06, notre équipe a créé un site web institutionnel pour une entreprise...</p>
                 </div>
             </div>
+            
+            <!-- Pop-ups for each project -->
+            <div id="popup1" class="popup">
+                <div class="popup-content">
+                    <span class="close" onclick="closePopup('popup1')">&times;</span>
+                    <h3>Application Gestion d'événement</h3>
+                    <p>Details about the project go here...</p>
+                </div>
+            </div>
+            
+            <div id="popup2" class="popup">
+                <div class="popup-content">
+                    <span class="close" onclick="closePopup('popup2')">&times;</span>
+                    <h3>Programmation Java</h3>
+                    <p>Details about the project go here...</p>
+                </div>
+            </div>
+            
+            <div id="popup3" class="popup">
+                <div class="popup-content">
+                    <span class="close" onclick="closePopup('popup3')">&times;</span>
+                    <h3>Approche Algorithmique</h3>
+                    <p>Details about the project go here...</p>
+                </div>
+
+            </div>
+
+            <div id="popup4" class="popup">
+                <div class="popup-content">
+                    <span class="close" onclick="closePopup('popup4')">&times;</span>
+                    <h3>Installation poste de travail</h3>
+                    <p>Details about the project go here...</p>
+                </div>
+            </div>
+
+            <div id="popup5" class="popup">
+                <div class="popup-content">
+                    <span class="close" onclick="closePopup('popup5')">&times;</span>
+                    <h3>Base de données</h3>
+                    <p>Details about the project go here...</p>
+                </div>
+            </div>
+
+            <div id="popup6" class="popup">
+                <div class="popup-content">
+                    <span class="close" onclick="closePopup('popup6')">&times;</span>
+                    <h3>Site institutionnel</h3>
+                    <p>Details about the project go here...</p>
+                </div>
+            </div>
+
         </section>
-        
-        <!-- Popups -->
-        <div id="popup1" class="popup">
-            <div class="popup-content">
-                <span class="close" onclick="closePopup('popup1')">&times;</span>
-                <p>Détails sur l'Application Gestion d'événement...</p>
-            </div>
-        </div>
-        <div id="popup2" class="popup">
-            <div class="popup-content">
-                <span class="close" onclick="closePopup('popup2')">&times;</span>
-                <p>Détails sur le projet de Programmation Java...</p>
-            </div>
-        </div>
-        <div id="popup3" class="popup">
-            <div class="popup-content">
-                <span class="close" onclick="closePopup('popup3')">&times;</span>
-                <p>Détails sur l'Approche Algorithmique...</p>
-            </div>
-        </div>
-        <div id="popup4" class="popup">
-            <div class="popup-content">
-                <span class="close" onclick="closePopup('popup4')">&times;</span>
-                <p>Détails sur l'Installation de poste de travail...</p>
-            </div>
-        </div>
-        <div id="popup5" class="popup">
-            <div class="popup-content">
-                <span class="close" onclick="closePopup('popup5')">&times;</span>
-                <p>Détails sur le projet de Base de données avec PostgreSQL...</p>
-            </div>
-        </div>
-        <div id="popup6" class="popup">
-            <div class="popup-content">
-                <span class="close" onclick="closePopup('popup6')">&times;</span>
-                <p>Détails sur le Site institutionnel...</p>
-            </div>
-        </div>
 
         <section id="contact">
             <h2>Contact</h2>
