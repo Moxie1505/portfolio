@@ -42,9 +42,16 @@ body {
     color: var(--landing-text-color);
     text-align: center;
     position: relative;
-    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out, width 1s ease-in-out, height 1s ease-in-out;
     opacity: 1;
     transform: scale(1);
+}
+
+.landing-page.reduced {
+    height: 100px;
+    width: 100vw;
+    transform: translateY(-100px); 
+    opacity: 0.8;
 }
 
 .intro-text h1 {
@@ -62,9 +69,8 @@ body {
     padding: 0.75rem 1.8rem;
     border-radius: 50px;
     position: relative;
-    overflow: hidden;    
+    overflow: hidden;
     margin-top: 20px;
-    
 }
 
 .intro-text .wave {
@@ -74,8 +80,9 @@ body {
     position: absolute;
     bottom: 0;
     left: 0;
-    box-shadow: inset 5px -5px 22px var(--button-hover-background-color), inset 5px -5px 22px var(--button-);
+    box-shadow: inset 5px -5px 22px var(--button-hover-background-color), inset 5px -5px 22px var(--button-background-color);
 }
+
 .wave::before,
 .wave::after {
     content: "";
@@ -87,13 +94,14 @@ body {
     transition: 0.5s ease-in-out;
 }
 
-.wave::after{
+.wave::after {
     width: 250%;
     height: 10rem;
     background: #f4f4f4;
     animation-delay: 2s;
 }
-.wave::before{
+
+.wave::before {
     width: 19rem;
     height: 12rem;
     background: #777;
@@ -113,14 +121,13 @@ body {
 }
 
 @keyframes animate {
-    form {
-            transform: rotate(0deg);
-        }
-        to {
-            transform: rotate(360deg);
-        }
+    from {
+        transform: rotate(0deg);
     }
-
+    to {
+        transform: rotate(360deg);
+    }
+}
 
 .hidden {
     display: none;
@@ -244,22 +251,22 @@ form button:hover {
 }
 
 .popup {
-    display: none; 
-    position: fixed; 
-    z-index: 1000; 
+    display: none;
+    position: fixed;
+    z-index: 1000;
     left: 0;
     top: 0;
-    width: 100%; 
-    height: 100%; 
-    overflow: auto; 
-    background-color: var(--popup-background-overlay); 
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: var(--popup-background-overlay);
 }
 
 .popup-content {
     background-color: var(--popup-content-background-color);
     padding: 20px;
     border: 1px solid #888;
-    width: 90%; 
+    width: 90%;
     max-width: 1000px;
     border-radius: 10px;
     box-shadow: 0 5px 15px var(--popup-shadow-color);
@@ -281,4 +288,8 @@ form button:hover {
     color: var(--close-button-hover-color);
     text-decoration: none;
     cursor: pointer;
+}
+
+.no-scroll {
+    overflow: hidden;
 }
