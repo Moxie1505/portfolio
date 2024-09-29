@@ -62,3 +62,15 @@ document.querySelectorAll('nav a').forEach(anchor => {
   });
 });
 
+function enterPortfolio() {
+  const landingPage = document.getElementById('landing-page');
+  const portfolioContent = document.getElementById('portfolio-content');
+
+  landingPage.classList.add('fade-to-gray');
+  
+  setTimeout(() => {
+    landingPage.style.display = 'none'; 
+    portfolioContent.style.display = 'block';  
+    document.body.classList.remove('no-scroll');  
+  }, 1000);  
+}

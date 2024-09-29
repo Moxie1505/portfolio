@@ -1,7 +1,6 @@
 :root {
     --text-color: #333;
     --background-color: #f4f4f4;
-    --landing-background-color: #282828;
     --landing-text-color: #FFFFFF;
     --button-background-color: #555;
     --button-hover-background-color: #777;
@@ -32,6 +31,12 @@ body {
     font-family: 'Poppins', sans-serif;
     width: 100%;
     height: 100%;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+body.no-scroll {
+    overflow: hidden;
 }
 
 h1, h2, h3 {
@@ -40,7 +45,7 @@ h1, h2, h3 {
 }
 
 h1 {
-    font-size: 4rem;
+    font-size: 3rem;
     text-align: center;
 }
 
@@ -53,16 +58,22 @@ p, a {
     color: rgba(255, 255, 255, 0.75);
 }
 
+#about p{
+    padding: 20px;
+}
+
+#portfolio-content {
+    display: none;
+    margin-left: 20px;
+}
+
 #landing-page {
     height: 100vh;
     width: 100vw;
-    background: linear-gradient(135deg, #1a1a1d, #121212);
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: white;
-    transition: opacity 1s ease, background-color 1s ease;
+    background-color:  linear-gradient(135deg, #1a1a1d, #121212);
 }
 
 #landing-page h1 {
@@ -73,14 +84,12 @@ p, a {
 }
 
 #landing-page button {
-    background-color: #6c63ff;
-    color: white;
+    background-color: var(--button-background-color);
+    color: var(--landing-text-color);
     font-size: 1.5rem;
     border: none;
-    border-radius: 30px;
-    padding: 15px 30px;
+    padding: 10px 20px;
     cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 #landing-page button:hover {
@@ -297,11 +306,11 @@ p, a {
 nav {
     position: fixed;
     top: 20px;
-    right: 30px;
-    z-index: 999; 
-    background-color: rgba(0, 0, 0, 0.8); 
+    right: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
     padding: 10px 20px;
     border-radius: 30px;
+    z-index: 999;
 }
 
 nav ul {
@@ -341,4 +350,98 @@ nav ul li a:hover {
     nav ul li {
         margin: 10px 0;
     }
+}
+
+#contact {
+    background-color: inherit;
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+#contact h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+#contact p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.form-group label {
+    margin-bottom: 5px;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+input, textarea {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 10px; 
+    font-size: 1rem;
+    background-color: #333; 
+    color: white;
+}
+
+input::placeholder, textarea::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+textarea {
+    height: 150px;
+    resize: none; 
+}
+
+button {
+    padding: 15px 30px;
+    background-color: #6c63ff;
+    color: white;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #5752d0;
+    transform: scale(1.05); 
+}
+
+@media (max-width: 600px) {
+    form {
+        width: 90%;
+    }
+
+    #contact h2 {
+        font-size: 2rem;
+    }
+
+    button {
+        width: 100%;
+    }
+}
+
+footer {
+    color: var(--footer-text-color);
+    text-align: center;
+    padding: 10px 0;
+    font-size: 1rem;
 }
