@@ -42,6 +42,7 @@ body.no-scroll {
 h1, h2, h3 {
     color: white;
     font-weight: 700;
+    text-align: center;
 }
 
 h1 {
@@ -51,6 +52,7 @@ h1 {
 
 h2 {
     font-size: 2.5rem;
+    margin-bottom: 20px;
 }
 
 p, a {
@@ -64,8 +66,30 @@ p, a {
 
 #portfolio-content {
     display: none;
-    margin-left: 20px;
 }
+
+#portfolio-content.slide-up {
+    display: block; 
+    animation: slide-up 1s forwards; 
+}
+
+.landing-page {
+    transition: transform 0.5s linear; 
+}
+
+.landing-page.slide-up {
+    transform: translateY(-100%); 
+}
+
+@keyframes slide-up {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0%);
+    }
+}
+
 
 #landing-page {
     height: 100vh;
@@ -303,6 +327,8 @@ p, a {
 }
 
 
+/* Supprimez ou commentez ces styles */
+/*
 nav {
     position: fixed;
     top: 20px;
@@ -333,7 +359,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: #6c63ff; /* Hover effect */
+    color: #6c63ff; 
 }
 
 @media (max-width: 768px) {
@@ -351,17 +377,54 @@ nav ul li a:hover {
         margin: 10px 0;
     }
 }
+*/
+
+/* Supprimez également ces styles s'ils existent encore */
+/*
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    background-color: #333;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav.active {
+    width: 250px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #fff;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #6c63ff;
+}
+
+.sidenav .close {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+*/
 
 #contact {
     background-color: inherit;
     color: white;
     padding: 60px 20px;
     text-align: center;
-}
-
-#contact h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
 }
 
 #contact p {
@@ -445,3 +508,130 @@ footer {
     padding: 10px 0;
     font-size: 1rem;
 }
+
+.skill-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.skill-icon i {
+    font-size: 2rem;
+    color: #6c63ff;
+    margin-bottom: 5px;
+}
+
+.skill-icon p {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Gardez ces styles pour le menu burger */
+#menu-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 30px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    width: 60px;
+    height: 60px;
+    z-index: 1000;
+}
+
+#menu-container.active {
+    width: 250px;
+    height: auto;
+}
+
+#openBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    text-decoration: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.burger-icon {
+    width: 30px;
+    height: 20px;
+    position: relative;
+}
+
+.burger-icon span {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background: #fff;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+.burger-icon span:nth-child(1) { top: 0; }
+.burger-icon span:nth-child(2) { top: 8px; }
+.burger-icon span:nth-child(3) { top: 16px; }
+
+#menu-container.active .burger-icon span:nth-child(1) {
+    transform: rotate(45deg);
+    top: 8px;
+}
+
+#menu-container.active .burger-icon span:nth-child(2) {
+    opacity: 0;
+}
+
+#menu-container.active .burger-icon span:nth-child(3) {
+    transform: rotate(-45deg);
+    top: 8px;
+}
+
+.nav-list {
+    display: none;
+    list-style-type: none;
+    padding: 20px;
+    margin: 0;
+}
+
+#menu-container.active .nav-list {
+    display: block;
+}
+
+.nav-list li {
+    margin: 15px 0;
+}
+
+.nav-list li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.nav-list li a:hover {
+    color: #6c63ff;
+}
+
+/* Supprimez cette animation si elle n'est plus nécessaire */
+/*
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+#main-header {
+    animation: slideDown 0.5s ease-out;
+}
+*/
+
+/* Le reste de vos styles CSS restent inchangés */

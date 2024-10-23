@@ -5,9 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mon Portfolio</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
+    <header id="main-header" style="display: none;">
+        <nav>
+            <div id="menu-container">
+                <a href="#" id="openBtn">
+                    <span class="burger-icon">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </span>
+                </a>
+                <ul id="nav-list" class="nav-list">
+                    <li><a href="#about">À propos</a></li>
+                    <li><a href="#skills">Compétences</a></li>
+                    <li><a href="#projects">Projets</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    
 
+    
     <div class="landing-page" id="landing-page">
         <div class="intro-text">
             <h1>Djibril Miliani</h1>
@@ -20,19 +42,7 @@
     </div>
 
     <div class="portfolio-content hidden" id="portfolio-content" style="display:none;">
-        <header>
-            <nav>
-                <ul>
-                    <li><a href="#about">À propos</a></li>
-                    <li><a href="#skills">Compétences</a></li>
-                    <li><a href="#projects">Projets</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-            <div class="header-content">
-                <h1>Bienvenue sur mon Portfolio</h1>
-            </div>
-        </header>
+    
 
         <section id="about">
             <h2>À propos</h2>
@@ -51,23 +61,57 @@
             <h2>Compétences</h2>
             <div class="skills-grid">
                 <div class="skill">
-                    <h3>HTML, CSS et PHP</h3>
-                    <p>Conception de sites web élégants et dynamiques.</p>
+                    <div class="skill-icon">
+                        <i class="fab fa-html5"></i>
+                        <p>HTML</p>
+                    </div>
                 </div>
                 <div class="skill">
-                    <h3>Java, C++</h3>
-                    <p>Développement de logiciels et programmes.</p>
+                    <div class="skill-icon">
+                        <i class="fab fa-css3-alt"></i>
+                        <p>CSS</p>
+                    </div>
                 </div>
                 <div class="skill">
-                    <h3>SQL</h3>
-                    <p>Création et gestion de bases de données.</p>
+                    <div class="skill-icon">
+                        <i class="fab fa-php"></i>
+                        <p>PHP</p>
+                    </div>
                 </div>
                 <div class="skill">
-                    <h3>Git</h3>
-                    <p>Gestion de versions décentralisée pour un suivi efficace des modifications et collaboration sur des projets.</p>
+                    <div class="skill-icon">
+                        <i class="fab fa-java"></i>
+                        <p>Java</p>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div class="skill-icon">
+                        <i class="fab fa-cuttlefish"></i>
+                        <p>C++</p>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div class="skill-icon">
+                        <i class="fab fa-js-square"></i>
+                        <p>JavaScript</p>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div class="skill-icon">
+                        <i class="fas fa-database"></i>
+                        <p>SQL</p>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div class="skill-icon">
+                        <i class="fab fa-git-alt"></i>
+                        <p>Git</p>
+                    </div>
                 </div>
             </div>
         </section>
+        
+        
 
         <section id="projects">
             <h2>Projets</h2>
@@ -154,6 +198,15 @@
         <section id="contact">
             <h2>Contactez-moi</h2>
             <p>Vous avez des questions ou souhaitez discuter ? Remplissez le formulaire ci-dessous.</p>
+            
+            <div id="personal-info">
+                <h3>Mes informations</h3>
+                <ul>
+                    <li><strong>Email :</strong> <a href="mailto:djibril.miliani@gmail.com">djibril.miliani@gmail.com</a></li>
+                    <li><strong>Téléphone :</strong> <a href="tel:+33767476502">+33 7 67 47 65 02</a></li>
+                </ul>
+            </div>
+            
             <form action="submit-form.php" method="post">
                 <div class="form-group">
                     <label for="name">Nom</label>
@@ -170,9 +223,12 @@
                     <textarea id="message" name="message" placeholder="Votre message" required></textarea>
                 </div>
         
-                <button type="submit">Envoyer</button>
+                <button type="submit">
+                    <span>Envoyer</span>
+                </button>
             </form>
         </section>
+        
         
 
         <footer>
