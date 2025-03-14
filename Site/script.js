@@ -9,8 +9,8 @@ function enterPortfolio() {
     portfolioContent.style.display = 'block';  
 
     setTimeout(() => {
-      portfolioContent.classList.add('show');
       portfolioContent.classList.remove("hidden");
+      portfolioContent.classList.add('show');
     }, 100);  
   }, 1000);  
 }
