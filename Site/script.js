@@ -15,6 +15,22 @@ function enterPortfolio() {
   }, 1000);  
 }
 
+const cardsContainer = document.querySelector(".container");
+
+cardsContainer.addEventListener("click", (e) => {
+  const target = e.target.closest(".card");
+
+  if (!target) return;
+
+  // Ferme toutes les cartes
+  cardsContainer.querySelectorAll(".card").forEach((card) => {
+    card.classList.remove("active");
+  });
+
+  // Ouvre la carte cliquée
+  target.classList.add("active");
+});
+
 
 function openPopup(popupId) {
   const popup = document.getElementById(popupId);
