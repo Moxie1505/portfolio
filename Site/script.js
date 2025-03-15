@@ -1,17 +1,19 @@
 function enterPortfolio() {
+  console.log("La fonction enterPortfolio a été appelée."); 
   const landingPage = document.getElementById('landing-page');
   const portfolioContent = document.getElementById('portfolio-content');
 
   landingPage.classList.add('fade-to-gray');
   
   setTimeout(() => {
-    landingPage.style.display = 'none'; 
-    portfolioContent.style.display = 'block';  
+      landingPage.style.display = 'none'; 
+      console.log("La page d'atterrissage est masquée.");
 
-    setTimeout(() => {
-      portfolioContent.classList.remove("hidden");
-      portfolioContent.classList.add('show');
-    }, 100);  
+
+      setTimeout(() => {
+          portfolioContent.classList.add('show');
+          console.log("La classe 'show' a été ajoutée au contenu du portfolio.");
+      }, 10); 
   }, 1000);  
 }
 
@@ -70,12 +72,11 @@ function showProjectModal(title, description) {
   alert(`Project: ${title}\n\nDescription: ${description}`);
 }
 
-document.querySelectorAll('nav a').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-      e.preventDefault();
+const menuBtn = document.querySelector(".menu-btn");
+const wrapper = document.querySelector(".wrapper");
 
-      document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-      });
-  });
+menuBtn.addEventListener("click", function () {
+  menuBtn.querySelector("i").classList.toggle("fa-xmark");
+
+  wrapper.classList.toggle("open");
 });
