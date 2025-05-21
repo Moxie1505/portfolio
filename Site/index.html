@@ -1,248 +1,157 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon Portfolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio de Djibril Miliani, développeur back-end">
+  <title>Djibril Miliani • Back-End</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px);} to { opacity: 1; transform: translateY(0);} }
+    .animate-fade-in { animation: fadeIn 0.8s ease-out forwards; }
+    .delay-100 { animation-delay: 0.1s;} .delay-200 { animation-delay: 0.2s;}
+  </style>
 </head>
-<body>
+<body class="bg-gray-50 text-gray-800 font-sans">
 
-    <div id="landing-page">
-            <h1>Djibril Miliani</h1>
-            <p>Bienvenue sur mon Portfolio</p>
-            <button class="btn" onclick="enterPortfolio()">ENTRER</button>
+<!-- Navigation -->
+<nav class="fixed w-full bg-white shadow-md z-10">
+  <div class="max-w-6xl mx-auto px-4 flex justify-between items-center h-16">
+    <span class="text-xl font-bold text-blue-500">Moxie<span class="text-gray-800">1505</span></span>
+    <div class="hidden md:flex space-x-6">
+      <a href="#home" class="nav-link hover:text-blue-500">Accueil</a>
+      <a href="#about" class="nav-link hover:text-blue-500">À propos</a>
+      <a href="#skills" class="nav-link hover:text-blue-500">Compétences</a>
+      <a href="#projects" class="nav-link hover:text-blue-500">Projets</a>
+      <a href="#contact" class="nav-link hover:text-blue-500">Contact</a>
     </div>
+    <button class="md:hidden mobile-menu-button"><i class="fas fa-bars text-2xl"></i></button>
+  </div>
+  <div class="mobile-menu hidden md:hidden bg-white shadow-lg">
+    <a href="#home" class="block px-4 py-2">Accueil</a>
+    <a href="#about" class="block px-4 py-2">À propos</a>
+    <a href="#skills" class="block px-4 py-2">Compétences</a>
+    <a href="#projects" class="block px-4 py-2">Projets</a>
+    <a href="#contact" class="block px-4 py-2">Contact</a>
+  </div>
+</nav>
 
-    <div id="portfolio-content">
-        <header>
-            <div class="header-content">
-                <h1>Bienvenue sur mon Portfolio</h1>
-            </div>
-        </header>
-
-        <section id="about">
-            <h2>À propos</h2>
-            <p>
-                Mon parcours scolaire est simple, j'ai le BAC STI2D avec l'option SIN ce qui m'a permis d'entrer à l'IUT2 de Grenoble dans la formation BUT Info Parcours A.
-                <br>
-                Cette formation m'a permis d'acquérir une solide expérience en programmation Java, C++, HTML, etc... 
-                <br> 
-                J'ai également eu l'occasion de travailler sur des projets concrets, tels que la création d'un site web ou même le développement d'une application lourde de gestion d'événements.
-                <br>
-                Mon objectif est de continuer à élargir mes horizons dans le domaine de l'informatique, en mettant à profit mes compétences techniques et ma passion pour l'innovation.
-            </p>
-        </section>
-
-        <section id="skills">
-            <h2>Compétences technique</h2>
-            <div class="skills-grid">
-                <div class="skill">
-                    <h3>HTML, CSS et PHP</h3>
-                    <p>Conception de sites web élégants et dynamiques.</p>
-                </div>
-                <div class="skill">
-                    <h3>Java, C++</h3>
-                    <p>Développement de logiciels et programmes.</p>
-                </div>
-                <div class="skill">
-                    <h3>SQL</h3>
-                    <p>Création et gestion de bases de données.</p>
-                </div>
-                <div class="skill">
-                    <h3>Git</h3>
-                    <p>Gestion de versions décentralisée pour un suivi efficace des modifications et collaboration sur des projets.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="projects">
-            <h2>Projets</h2>
-
-            <div class="projects-grid">
-                <div class="project" onclick="openPopup('popup1')">
-                    <h3>Application Gestion d'événement</h3>
-                    <p>Lors de ma participation à la MEGA SAE, j'ai acquis de nombreuses compétences dans divers domaines...</p>
-                </div>
-                <div class="project" onclick="openPopup('popup2')">
-                    <h3>Programmation Java</h3>
-                    <p>La SAE1.01 a été une expérience d'apprentissage précieuse pour moi, en développant mes compétences en Java...</p>
-                </div>
-                <div class="project" onclick="openPopup('popup3')">
-                    <h3>Approche Algorithmique</h3>
-                    <p>Lors de la SAE1.02, nous avons exploré diverses approches algorithmiques pour résoudre des problèmes de tri en Java...</p>
-                </div>
-                <div class="project" onclick="openPopup('popup4')">
-                    <h3>Installation poste de travail</h3>
-                    <p>La SAE1.03 a été une expérience enrichissante pour moi, en créant un guide d'installation pour un poste de travail Linux...</p>
-                </div>
-                <div class="project" onclick="openPopup('popup5')">
-                    <h3>Base de données</h3>
-                    <p>Pendant la SAE1.04, nous avons créé une base de données en utilisant PostgreSQL...</p>
-                </div>
-                <div class="project" onclick="openPopup('popup6')">
-                    <h3>Site institutionnel</h3>
-                    <p>Dans le cadre des SAE1.05 et 1.06, notre équipe a créé un site web institutionnel pour une entreprise...</p>
-                </div>
-            </div>
-            
-            <!-- Pop-ups for each project -->
-            <div id="popup1" class="popup">
-                <div class="popup-content">
-                    <span class="close" onclick="closePopup('popup1')">&times;</span>
-                    <h3>Application Gestion d'événement</h3>
-                    <p>Details about the project go here...</p>
-                </div>
-            </div>
-            
-            <div id="popup2" class="popup">
-                <div class="popup-content">
-                    <span class="close" onclick="closePopup('popup2')">&times;</span>
-                    <h3>Programmation Java</h3>
-                    <p>Details about the project go here...</p>
-                </div>
-            </div>
-            
-            <div id="popup3" class="popup">
-                <div class="popup-content">
-                    <span class="close" onclick="closePopup('popup3')">&times;</span>
-                    <h3>Approche Algorithmique</h3>
-                    <p>Details about the project go here...</p>
-                </div>
-
-            </div>
-
-            <div id="popup4" class="popup">
-                <div class="popup-content">
-                    <span class="close" onclick="closePopup('popup4')">&times;</span>
-                    <h3>Installation poste de travail</h3>
-                    <p>Details about the project go here...</p>
-                </div>
-            </div>
-
-            <div id="popup5" class="popup">
-                <div class="popup-content">
-                    <span class="close" onclick="closePopup('popup5')">&times;</span>
-                    <h3>Base de données</h3>
-                    <p>Details about the project go here...</p>
-                </div>
-            </div>
-
-            <div id="popup6" class="popup">
-                <div class="popup-content">
-                    <span class="close" onclick="closePopup('popup6')">&times;</span>
-                    <h3>Site institutionnel</h3>
-                    <p>Details about the project go here...</p>
-                </div>
-            </div>
-
-        </section>
-
-    <!-- test -->
-        <div class="container">
-            <div class="card">
-                <img class="background" src="./img/bd.jpeg">
-                <div class="card-content">
-                    <svg>...</svg>
-                    <h3 class="title">Projet 1</h3>
-                </div>
-                <div class="backdrop"> </div>
-            </div>
-
-            <div class="card">
-                <img class="background" src="./img/bd.jpeg">
-                <div class="card-content">
-                    <svg>...</svg>
-                    <h3 class="title">Projet 2</h3>
-                </div>
-                <div class="backdrop"> </div>
-            </div>
-
-            <div class="card">
-                <img class="background" src="./img/bd.jpeg">
-                <div class="card-content">
-                    <svg>...</svg>
-                    <h3 class="title">Projet 2</h3>
-                </div>
-                <div class="backdrop"> </div>
-            </div>
-
-            <div class="card">
-                <img class="background" src="./img/bd.jpeg">
-                <div class="card-content">
-                    <svg>...</svg>
-                    <h3 class="title">Projet 1</h3>
-                </div>
-                <div class="backdrop"> </div>
-            </div>
-
-            <div class="card">
-                <img class="background" src="./img/bd.jpeg">
-                <div class="card-content">
-                    <svg>...</svg>
-                    <h3 class="title">Projet 2</h3>
-                </div>
-                <div class="backdrop"> </div>
-            </div>
-
-            <div class="card">
-                <img class="background" src="./img/bd.jpeg">
-                <div class="card-content">
-                    <svg>...</svg>
-                    <h3 class="title">Projet 2</h3>
-                </div>
-                <div class="backdrop"> </div>
-            </div>
-            <!-- Autre carte -->
+<main class="pt-20">
+  <!-- Hero -->
+  <section id="home" class="bg-gradient-to-r from-blue-50 to-gray-100 py-16">
+    <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center">
+      <div class="md:w-1/2 animate-fade-in delay-100">
+        <h1 class="text-4xl font-bold mb-2">Bonjour, je suis <span class="text-blue-500">Djibril Miliani</span></h1>
+        <h2 class="text-2xl font-semibold mb-4 text-gray-600">Développeur Back-End</h2>
+        <p class="mb-6">Je conçois des API robustes, scalables et sécurisées pour des applications modernes.</p>
+        <div class="flex space-x-4">
+          <a href="#contact" class="bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600">Me contacter</a>
+          <a href="#projects" class="border border-blue-500 text-blue-500 px-6 py-2 rounded-lg hover:bg-blue-50">Voir mes projets</a>
         </div>
-        
-    <!-- test -->
-
-        <section id="contact">
-            <h2>Contact</h2>
-            <form action="submit-form.php" method="post">
-                <label for="name">Nom</label>
-                <input type="text" id="name" name="name" required>
-                
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
-                
-                <label for="message">Message</label>
-                <textarea id="message" name="message" required></textarea>
-                
-                <button type="submit">Envoyer</button>
-            </form>
-        </section>
-
-        <ul>
-            <li class="item">
-              <a href="#">
-                <i class="fa-brands fa-instagram icon"></i>
-              </a>
-            </li>
-            <li class="item">
-              <a href="#">
-                <i class="fa-brands fa-linkedin icon"></i>
-              </a>
-            </li>
-            <li class="item">
-              <a href="#">
-                <i class="fa-brands fa-youtube icon"></i>
-              </a>
-            </li>
-            <li class="item">
-              <a href="#">
-                <i class="fa-brands fa-x-twitter icon"></i>
-              </a>
-            </li>
-          </ul>
-
-        <footer>
-            <p>&copy; 2024 Mon Portfolio. Tous droits réservés.</p>
-        </footer>
+      </div>
+      <div class="md:w-1/2 flex justify-center mt-8 md:mt-0 animate-fade-in delay-200">
+        <img src="assets/avatar.jpg" alt="Photo de Djibril Miliani" class="w-64 h-64 md:w-80 md:h-80 object-cover rounded-full shadow-xl">
+      </div>
     </div>
+  </section>
 
-    <script src="script.js"></script>
+  <!-- À propos -->
+  <section id="about" class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-8 animate-fade-in">À propos de moi</h2>
+      <div class="flex flex-col md:flex-row items-center">
+        <div class="md:w-1/3 flex justify-center mb-6 md:mb-0">
+          <img src="assets/avatar.jpg" alt="Photo Djibril" class="w-48 h-48 rounded-full shadow-lg">
+        </div>
+        <div class="md:w-2/3 md:pl-8 animate-fade-in delay-100">
+          <p class="mb-4">Issu d'un BUT Informatique (IUT2 Grenoble), je suis passionné par le back-end : Java, Spring Boot, Python et bases de données.</p>
+          <p>J'ai construit et déployé des API REST, mis en place des pipelines CI/CD et optimisé des systèmes pour la performance et la sécurité.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Compétences -->
+  <section id="skills" class="py-16 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-8 animate-fade-in">Compétences</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-white p-6 rounded-xl shadow-md animate-fade-in delay-100">
+          <i class="fas fa-code text-blue-500 text-2xl mb-2"></i>
+          <h3 class="font-semibold mb-1">Langages</h3>
+          <p>Java, Python, Node.js, PHP</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-md animate-fade-in delay-200">
+          <i class="fas fa-database text-blue-500 text-2xl mb-2"></i>
+          <h3 class="font-semibold mb-1">Bases de données</h3>
+          <p>PostgreSQL, MySQL, MongoDB, Redis</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-md animate-fade-in delay-300">
+          <i class="fas fa-server text-blue-500 text-2xl mb-2"></i>
+          <h3 class="font-semibold mb-1">Frameworks</h3>
+          <p>Spring Boot, Django, Express.js</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-md animate-fade-in delay-400">
+          <i class="fas fa-cogs text-blue-500 text-2xl mb-2"></i>
+          <h3 class="font-semibold mb-1">Outils</h3>
+          <p>Docker, GitHub Actions, AWS</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projets -->
+  <section id="projects" class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-8 animate-fade-in">Projets</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Exemple projet -->
+        <div class="project-card bg-white rounded-xl overflow-hidden shadow-md animate-fade-in delay-100">
+          <img src="captures/gestion-evenement.png" alt="Gestion d'événements" class="h-48 w-full object-cover">
+          <div class="p-4">
+            <h3 class="font-semibold mb-2">Gestion d'événements</h3>
+            <p class="text-sm mb-4">API REST en Spring Boot pour gérer événements et inscriptions.</p>
+            <div class="flex space-x-3">
+              <a href="https://github.com/Moxie1505/event-api" class="text-blue-500 hover:underline"><i class="fab fa-github"></i> Code</a>
+            </div>
+          </div>
+        </div>
+        <!-- Autres projets... -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-16 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-8 animate-fade-in">Contact</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <form action="submit-form.php" method="post" class="bg-white p-6 rounded-xl shadow-md animate-fade-in delay-100">
+          <label class="block mb-2">Nom</label><input type="text" name="name" class="w-full p-2 border rounded mb-4" required>
+          <label class="block mb-2">Email</label><input type="email" name="email" class="w-full p-2 border rounded mb-4" required>
+          <label class="block mb-2">Message</label><textarea name="message" rows="4" class="w-full p-2 border rounded mb-4" required></textarea>
+          <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Envoyer</button>
+        </form>
+        <div class="animate-fade-in delay-200">
+          <p class="mb-4"><i class="fas fa-envelope text-blue-500"></i> djibril.miliani@gmail.com</p>
+          <p class="mb-4"><i class="fab fa-github text-gray-800"></i> <a href="https://github.com/Moxie1505" class="hover:underline">GitHub</a></p>
+          <p><i class="fab fa-linkedin text-blue-700"></i> <a href="https://linkedin.com/in/moxie1505" class="hover:underline">LinkedIn</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="bg-white py-6 shadow-inner">
+  <div class="max-w-6xl mx-auto px-4 text-center text-gray-600">
+    &copy; 2025 Djibril Miliani
+  </div>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
