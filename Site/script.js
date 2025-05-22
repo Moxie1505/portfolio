@@ -23,10 +23,16 @@ const animateOnScroll = () => {
 window.addEventListener('scroll', animateOnScroll);
 window.addEventListener('load', animateOnScroll);
 
-function toggleProject(card) {
-    // Ferme les autres cartes ouvertes
-    document.querySelectorAll('.project-card.expanded')
-      .forEach(c => c !== card && c.classList.remove('expanded'));
-    // Bascule l’état de celle qu’on a cliquée
-    card.classList.toggle('expanded');
-  }
+document.querySelectorAll('.project-card').forEach(card => {
+    card.addEventListener('click', () => {
+      // Ferme toute autre carte
+      document.querySelectorAll('.project-card.expanded').forEach(other => {
+        if (other !== card) {
+          other.classList.remove('expanded', 'row-span-2');
+        }
+      });
+      // Bascule l'état de la carte cliquée
+      card.classList.toggle('expanded');
+      card.classList.toggle('row-span-2');
+    });
+  });
