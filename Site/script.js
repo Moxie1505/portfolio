@@ -22,3 +22,11 @@ const animateOnScroll = () => {
 };
 window.addEventListener('scroll', animateOnScroll);
 window.addEventListener('load', animateOnScroll);
+
+function toggleProject(card) {
+    // Ferme les autres cartes ouvertes
+    document.querySelectorAll('.project-card.expanded')
+      .forEach(c => c !== card && c.classList.remove('expanded'));
+    // Bascule l’état de celle qu’on a cliquée
+    card.classList.toggle('expanded');
+  }

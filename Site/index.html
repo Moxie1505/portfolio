@@ -10,10 +10,42 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
+    .project-card {
+    transition: all 0.3s ease;
+    overflow: hidden;
+    cursor: pointer;
+    }
+
+    .project-content {
+    max-height: 0;
+    opacity: 0;
+    transition: all 0.5s ease;
+    overflow: hidden;
+    }
+
+    .project-card.expanded {
+    transform: scale(1.03);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1),
+                0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+
+    .project-card.expanded .project-content {
+    max-height: 1000px;  /* assez grand pour englober ton contenu */
+    opacity: 1;
+    }
+
+    .project-icon {
+    transition: transform 0.3s ease;
+    }
+
+    .project-card.expanded .project-icon {
+    transform: rotate(180deg);
+    }
+
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px);} to { opacity: 1; transform: translateY(0);} }
-    .animate-fade-in { animation: fadeIn 0.8s ease-out forwards; }
-    .delay-100 { animation-delay: 0.1s;} .delay-200 { animation-delay: 0.2s;}
+        from { opacity: 0; transform: translateY(20px);} to { opacity: 1; transform: translateY(0);} }
+        .animate-fade-in { animation: fadeIn 0.8s ease-out forwards; }
+        .delay-100 { animation-delay: 0.1s;} .delay-200 { animation-delay: 0.2s;}
   </style>
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans">
@@ -67,7 +99,7 @@
           <img src="assets/avatar.jpg" alt="Photo Djibril" class="w-48 h-48 rounded-full shadow-lg">
         </div>
         <div class="md:w-2/3 md:pl-8 animate-fade-in delay-100">
-          <p class="mb-4">Actuellement en deuxième année de <strong>BUT Informatique (IUT2 Grenoble)</strong>, je développe mes compétences en <strong>Java, Python, Node.js, C++</strong> et <strong>PHP</strong> pour concevoir des systèmes robustes et maintenables.</p>
+          <p class="mb-4">Actuellement en deuxième année de <strong>BUT Informatique (IUT2 Grenoble)</strong>, je développe mes compétences en <strong>Java, Python, C++</strong> et <strong>PHP</strong> pour concevoir des systèmes robustes et maintenables.</p>
           <p class="mb-4">J'ai conçu et déployé des API REST avec <strong>Flask</strong> et implémenté des fonctionnalités de gestion de données avancées, tout en optimisant des bases de données <strong>PostgreSQL</strong>.</p>
           <p>Passionné par l'innovation, j'explore les technologies de pointe telles que les <strong>LLM</strong> (ChatGPT, GPT-4) pour automatiser et améliorer les processus de développement.</p>
         </div>
@@ -110,25 +142,122 @@
   </section>
 
   <!-- Projets -->
-  <section id="projects" class="py-16 bg-white">
-    <div class="max-w-6xl mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-8 animate-fade-in">Projets</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- Exemple projet -->
-        <div class="project-card bg-white rounded-xl overflow-hidden shadow-md animate-fade-in delay-100">
-          <img src="captures/gestion-evenement.png" alt="Gestion d'événements" class="h-48 w-full object-cover">
-          <div class="p-4">
-            <h3 class="font-semibold mb-2">Gestion d'événements</h3>
-            <p class="text-sm mb-4">API REST en Spring Boot pour gérer événements et inscriptions.</p>
-            <div class="flex space-x-3">
-              <a href="https://github.com/Moxie1505/event-api" class="text-blue-500 hover:underline"><i class="fab fa-github"></i> Code</a>
-            </div>
+<section id="projects" class="py-16 bg-white">
+  <div class="max-w-6xl mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center mb-8 animate-fade-in">Projets</h2>
+    <p class="text-center text-gray-600 mb-12">
+      Cliquez sur un projet pour déployer les détails.
+    </p>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      
+      <!-- Projet 1 -->
+      <div class="project-card bg-white rounded-xl shadow-md p-6 animate-fade-in delay-100"
+           onclick="toggleProject(this)">
+        <div class="flex justify-between items-center">
+          <div>
+            <h3 class="text-xl font-semibold text-gray-800">Gestion d'événements</h3>
+            <p class="text-indigo-600">API REST – Flask</p>
           </div>
+          <i class="project-icon fas fa-chevron-down text-gray-400"></i>
         </div>
-        <!-- Autres projets... -->
+        <p class="text-gray-600 mt-2">
+          API Flask pour gérer événements et inscriptions.
+        </p>
+        <div class="project-content mt-4">
+          <img src="captures/gestion-evenement.png"
+               alt="Gestion d'événements"
+               class="w-full h-48 object-cover rounded-lg mb-4">
+          <h4 class="font-semibold mb-2">Contexte</h4>
+          <p class="text-gray-700 mb-4">
+            Projet MEGA SAE en équipe de 4 pour la gestion d'inscriptions et d'événements.
+          </p>
+          <h4 class="font-semibold mb-2">Fonctionnalités</h4>
+          <ul class="list-disc list-inside text-gray-700 mb-4">
+            <li>CRUD événements & inscriptions</li>
+            <li>Gestion des rôles et authentification</li>
+            <li>Notifications automatiques par e-mail</li>
+          </ul>
+          <h4 class="font-semibold mb-2">Techniques & acquis</h4>
+          <p class="text-gray-700">
+            Flask, SQLAlchemy, PostgreSQL, déploiement Heroku, bonnes pratiques REST.
+          </p>
+        </div>
       </div>
+      
+      <!-- Projet 2 -->
+      <div class="project-card bg-white rounded-xl shadow-md p-6 animate-fade-in delay-200"
+           onclick="toggleProject(this)">
+        <div class="flex justify-between items-center">
+          <div>
+            <h3 class="text-xl font-semibold text-gray-800">Programmation Java</h3>
+            <p class="text-indigo-600">Console App – Java</p>
+          </div>
+          <i class="project-icon fas fa-chevron-down text-gray-400"></i>
+        </div>
+        <p class="text-gray-600 mt-2">
+          Application console de gestion de bibliothèque.
+        </p>
+        <div class="project-content mt-4">
+          <img src="captures/java-app.png"
+               alt="Programmation Java"
+               class="w-full h-48 object-cover rounded-lg mb-4">
+          <h4 class="font-semibold mb-2">Contexte</h4>
+          <p class="text-gray-700 mb-4">
+            SAE1.01 : programme Java pour gérer une bibliothèque de livres.
+          </p>
+          <h4 class="font-semibold mb-2">Fonctionnalités</h4>
+          <ul class="list-disc list-inside text-gray-700 mb-4">
+            <li>Lecture/écriture CSV</li>
+            <li>Recherche et filtres avancés</li>
+            <li>Interface console</li>
+          </ul>
+          <h4 class="font-semibold mb-2">Techniques & acquis</h4>
+          <p class="text-gray-700">
+            Collections Java, exceptions, tests unitaires (JUnit).
+          </p>
+        </div>
+      </div>
+      
+      <!-- Projet 3 -->
+      <div class="project-card bg-white rounded-xl shadow-md p-6 animate-fade-in delay-300"
+           onclick="toggleProject(this)">
+        <div class="flex justify-between items-center">
+          <div>
+            <h3 class="text-xl font-semibold text-gray-800">Approche Algorithmique</h3>
+            <p class="text-indigo-600">Tri & Profiling</p>
+          </div>
+          <i class="project-icon fas fa-chevron-down text-gray-400"></i>
+        </div>
+        <p class="text-gray-600 mt-2">
+          Comparaison d’algorithmes de tri en Java.
+        </p>
+        <div class="project-content mt-4">
+          <img src="captures/algorithmique.png"
+               alt="Approche Algorithmique"
+               class="w-full h-48 object-cover rounded-lg mb-4">
+          <h4 class="font-semibold mb-2">Contexte</h4>
+          <p class="text-gray-700 mb-4">
+            SAE1.02 : tri à bulles, insertion, fusion et mesure de performance.
+          </p>
+          <h4 class="font-semibold mb-2">Fonctionnalités</h4>
+          <ul class="list-disc list-inside text-gray-700 mb-4">
+            <li>Implémentation des algorithmes</li>
+            <li>Mesure des temps d’exécution</li>
+            <li>Analyse de complexité</li>
+          </ul>
+          <h4 class="font-semibold mb-2">Techniques & acquis</h4>
+          <p class="text-gray-700">
+            Structures de données, optimisation, profiling Java.
+          </p>
+        </div>
+      </div>
+      
+      <!-- Ajoute de la même façon tes projets 4, 5 et 6… -->
+      
     </div>
-  </section>
+  </div>
+</section>
+
 
   <!-- Contact -->
   <section id="contact" class="py-16 bg-gray-50">
