@@ -18,7 +18,7 @@
 }
 
 .project-card.expanded .project-content {
-  max-height: 1000px;  /* assez grand pour englober ton contenu */
+  max-height: 1000px;
   opacity: 1;
 }
 
