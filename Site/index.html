@@ -123,7 +123,7 @@
         <div class="bg-white p-6 rounded-xl shadow-md animate-fade-in delay-200">
           <i class="fas fa-database text-blue-500 text-2xl mb-2"></i>
           <h3 class="font-semibold mb-1">Bases de données</h3>
-          <p>PostgreSQL, </p>
+          <p>PostgreSQL, Doctrine</p>
         </div>
         <!-- Frameworks & Styles -->
         <div class="bg-white p-6 rounded-xl shadow-md animate-fade-in delay-300">
@@ -296,8 +296,62 @@
         </div>
       </div>
 
+
+      <!-- Projet : Boutique Symfony — Panier, Doctrine & Sécurité -->
+      <div class="project-card bg-white rounded-xl shadow-md p-6 animate-fade-in delay-300"
+          onclick="toggleProject(this)">
+        <div class="flex justify-between items-center">
+          <div>
+            <h3 class="text-xl font-semibold text-gray-800">Boutique Symfony</h3>
+            <p class="text-indigo-600">Back-End&nbsp;· PHP / Symfony</p>
+          </div>
+          <i class="project-icon fas fa-chevron-down text-gray-400"></i>
+        </div>
+
+        <!-- Résumé court -->
+        <p class="text-gray-600 mt-2">
+          Implémentation complète d’un panier, de la persistance BD (Doctrine) et
+          du module sécurité sur une mini-boutique universitaire.
+        </p>
+
+        <!-- Contenu détaillé -->
+        <div class="project-content mt-4">
+          <img src="img/twig.png"
+              alt="Boutique Symfony"
+              class="w-full h-48 object-cover rounded-lg mb-4">
+
+          <h4 class="font-semibold mb-2">Contexte</h4>
+          <p class="text-gray-700 mb-4">
+            TP 03 → TP 06 du module <strong>R4.01</strong> (BUT Info S3) :
+            ajout d’un panier, migration vers Doctrine ORM, gestion des commandes
+            et sécurisation par authentification.
+          </p>
+
+          <h4 class="font-semibold mb-2">Fonctionnalités</h4>
+          <ul class="list-disc list-inside text-gray-700 mb-4">
+            <li>Service <code>PanierService</code> : ajout, retrait, total, vidage, session</li>
+            <li>Routes &amp; contrôleurs CRUD (ajouter / supprimer / vider)</li>
+            <li>Migrations Doctrine + fixtures (<em>4 catégories, 12 produits</em>)</li>
+            <li>Entités Usager, Commande, LigneCommande ; conversion panier → commande</li>
+            <li>Authentification form-login, rôles, accès protégés (<code>ROLE_CLIENT</code>)</li>
+            <li>Barre de navigation dynamique : compteur d’articles + login/logout</li>
+          </ul>
+
+          <h4 class="font-semibold mb-2">Techniques &amp; acquis</h4>
+          <div class="flex flex-wrap gap-2">
+            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">PHP 8.2</span>
+            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Symfony 6</span>
+            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Doctrine ORM</span>
+            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Twig</span>
+            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Security</span>
+            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">REST</span>
+            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">PHPUnit</span>
+            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Git</span>
+          </div>
+        </div>
+      </div>
+
       
-      <!-- Ajoute de la même façon tes projets 4, 5 et 6… -->
       
     </div>
   </div>
