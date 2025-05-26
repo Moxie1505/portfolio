@@ -36,3 +36,13 @@ document.querySelectorAll('.project-card').forEach(card => {
       card.classList.toggle('row-span-2');
     });
   });
+
+  const form = document.getElementById('contactForm');
+  const successMsg = document.getElementById('formSuccess');
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();     // empêche l’envoi vers le serveur
+    form.reset();           // vide tous les champs
+    successMsg.classList.remove('hidden');     // affiche le message
+    setTimeout(() => successMsg.classList.add('hidden'), 3000); // le masque après 3 s
+  });

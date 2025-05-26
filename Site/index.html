@@ -412,17 +412,48 @@
   <section id="contact" class="py-16 bg-gray-50">
     <div class="max-w-6xl mx-auto px-4">
       <h2 class="text-3xl font-bold text-center mb-8 animate-fade-in">Contact</h2>
+
+      <!-- Message de succès (caché par défaut) -->
+      <p id="formSuccess"
+        class="hidden text-green-600 font-semibold text-center mb-6 animate-fade-in">
+        ✔︎ Message envoyé
+      </p>
+
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <form action="submit-form.php" method="post" class="bg-white p-6 rounded-xl shadow-md animate-fade-in delay-100">
-          <label class="block mb-2">Nom</label><input type="text" name="name" class="w-full p-2 border rounded mb-4" required>
-          <label class="block mb-2">Email</label><input type="email" name="email" class="w-full p-2 border rounded mb-4" required>
-          <label class="block mb-2">Message</label><textarea name="message" rows="4" class="w-full p-2 border rounded mb-4" required></textarea>
-          <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Envoyer</button>
+        <!-- Ajout d’un id pour le JS -->
+        <form id="contactForm"
+              class="bg-white p-6 rounded-xl shadow-md animate-fade-in delay-100">
+          <label class="block mb-2">Nom</label>
+          <input type="text" name="name"
+                class="w-full p-2 border rounded mb-4" required>
+
+          <label class="block mb-2">Email</label>
+          <input type="email" name="email"
+                class="w-full p-2 border rounded mb-4" required>
+
+          <label class="block mb-2">Message</label>
+          <textarea name="message" rows="4"
+                    class="w-full p-2 border rounded mb-4" required></textarea>
+
+          <button type="submit"
+                  class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+            Envoyer
+          </button>
         </form>
+
         <div class="animate-fade-in delay-200">
-          <p class="mb-4"><i class="fas fa-envelope text-blue-500"></i> djibril.miliani@gmail.com</p>
-          <p class="mb-4"><i class="fab fa-github text-blue-500"></i> <a href="https://github.com/Moxie1505" class="hover:underline">GitHub</a></p>
-          <p class="mb-4"><i class="fas fa-phone text-blue-500"></i> 07 67 47 65 02</p>
+          <p class="mb-4">
+            <i class="fas fa-envelope text-blue-500"></i>
+            djibril.miliani@gmail.com
+          </p>
+          <p class="mb-4">
+            <i class="fab fa-github text-blue-500"></i>
+            <a href="https://github.com/Moxie1505" class="hover:underline">GitHub</a>
+          </p>
+          <p class="mb-4">
+            <i class="fas fa-phone text-blue-500"></i>
+            07 67 47 65 02
+          </p>
         </div>
       </div>
     </div>
