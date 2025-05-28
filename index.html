@@ -73,23 +73,41 @@
   </div>
 </nav>
 
-<main class="pt-10">
+<main class="pt-16">
   <!-- Hero -->
-  <section id="home" class="bg-gradient-to-r from-blue-50 to-gray-100 py-20">
-    <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center">
-      <div class="md:w-1/2 animate-fade-in delay-100">
-        <h1 class="text-4xl font-bold mb-2">Bonjour, je suis <span class="text-blue-500">Djibril Miliani</span></h1>
-        <h2 class="text-2xl font-semibold mb-4 text-gray-600">Développeur FullStack</h2>
-        <div class="flex space-x-4">
-          <a href="#contact" class="bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600">Me contacter</a>
-          <a href="#projects" class="border border-blue-500 text-blue-500 px-6 py-2 rounded-lg hover:bg-blue-50">Voir mes projets</a>
-        </div>
-      </div>
-      <div class="md:w-1/2 flex justify-center mt-8 md:mt-0 animate-fade-in delay-200">
-        <img src="img/hero.png" alt="Photo de Djibril Miliani" class="w-64 h-64 md:w-80 md:h-80 object-cover rounded-full shadow-xl">
+  <section id="home" class="relative bg-gradient-to-r from-blue-50 to-gray-100 py-24 overflow-hidden">
+  <!-- Texte centré dans un container limité -->
+  <div class="relative z-10 max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center">
+    <div class="md:w-1/2 animate-fade-in delay-100">
+      <h1 class="text-4xl font-bold mb-2">
+        Bonjour, je suis <span class="text-blue-500">Djibril Miliani</span>
+      </h1>
+      <h2 class="text-2xl font-semibold mb-4 text-gray-600">
+        Développeur FullStack
+      </h2>
+      <div class="flex space-x-4">
+        <a href="#contact"
+           class="bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600">
+          Me contacter
+        </a>
+        <a href="#projects"
+           class="border border-blue-500 text-blue-500 px-6 py-2 rounded-lg hover:bg-blue-50">
+          Voir mes projets
+        </a>
       </div>
     </div>
-  </section>
+  </div>
+
+  <!-- Image en full-bleed à droite -->
+  <div class="hidden md:block absolute inset-y-0 right-0 w-1/2">
+    <img
+      src="img/hero.png"
+      alt="Photo de Djibril Miliani"
+      class="w-full h-full object-cover rounded-l-full shadow-xl"
+    />
+  </div>
+</section>
+
 
    <!-- À propos -->
   <section id="about" class="py-16 bg-white">
