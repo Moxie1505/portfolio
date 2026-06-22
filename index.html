@@ -52,30 +52,32 @@
 <body class="bg-gray-50 text-gray-800 font-sans">
 
 <!-- Navigation -->
-<nav class="fixed w-full bg-white shadow-md z-50">
+<nav class="fixed w-full glass-nav shadow-sm z-50">
   <div class="max-w-6xl mx-auto px-4 flex justify-between items-center h-16">
-    <span class="text-xl font-bold text-blue-500">Djibril<span class="text-gray-800"> Miliani</span></span>
-    <div class="hidden md:flex space-x-6">
-      <a href="#home" class="nav-link hover:text-blue-500">Accueil</a>
-      <a href="#about" class="nav-link hover:text-blue-500">À propos</a>
-      <a href="#skills" class="nav-link hover:text-blue-500">Compétences</a>
-      <a href="#projects" class="nav-link hover:text-blue-500">Projets</a>
-      <a href="#contact" class="nav-link hover:text-blue-500">Contact</a>
+    <span class="text-xl font-bold text-blue-600 tracking-tight">Djibril<span class="text-gray-800"> Miliani</span></span>
+    <div class="hidden md:flex space-x-6 font-medium">
+      <a href="#home" class="nav-link hover:text-blue-500 transition-colors">Accueil</a>
+      <a href="#about" class="nav-link hover:text-blue-500 transition-colors">À propos</a>
+      <a href="#post-but" class="nav-link hover:text-blue-500 transition-colors">Projet Post-BUT</a>
+      <a href="#skills" class="nav-link hover:text-blue-500 transition-colors">Compétences</a>
+      <a href="#projects" class="nav-link hover:text-blue-500 transition-colors">Projets</a>
+      <a href="#contact" class="nav-link hover:text-blue-500 transition-colors">Contact</a>
     </div>
     <button class="md:hidden mobile-menu-button"><i class="fas fa-bars text-2xl"></i></button>
   </div>
-  <div class="mobile-menu hidden md:hidden bg-white shadow-lg">
-    <a href="#home" class="block px-4 py-2">Accueil</a>
-    <a href="#about" class="block px-4 py-2">À propos</a>
-    <a href="#skills" class="block px-4 py-2">Compétences</a>
-    <a href="#projects" class="block px-4 py-2">Projets</a>
-    <a href="#contact" class="block px-4 py-2">Contact</a>
+  <div class="mobile-menu hidden md:hidden glass-nav shadow-lg absolute w-full">
+    <a href="#home" class="block px-4 py-3 hover:bg-gray-50 border-b border-gray-100">Accueil</a>
+    <a href="#about" class="block px-4 py-3 hover:bg-gray-50 border-b border-gray-100">À propos</a>
+    <a href="#post-but" class="block px-4 py-3 hover:bg-gray-50 border-b border-gray-100">Projet Post-BUT</a>
+    <a href="#skills" class="block px-4 py-3 hover:bg-gray-50 border-b border-gray-100">Compétences</a>
+    <a href="#projects" class="block px-4 py-3 hover:bg-gray-50 border-b border-gray-100">Projets</a>
+    <a href="#contact" class="block px-4 py-3 hover:bg-gray-50">Contact</a>
   </div>
 </nav>
 
 <main class="pt-16">
   <!-- Hero -->
-  <section id="home" class="relative bg-gradient-to-r from-blue-50 to-gray-100 py-24 overflow-hidden">
+  <section id="home" class="relative hero-gradient py-28 overflow-hidden">
   <!-- Texte centré dans un container limité -->
   <div class="relative z-10 max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center">
     <div class="md:w-1/2 animate-fade-in delay-100">
@@ -126,6 +128,26 @@
     </div>
   </section>
 
+  <!-- Projet Post-BUT -->
+  <section id="post-but" class="py-16 hero-gradient relative overflow-hidden">
+    <div class="max-w-6xl mx-auto px-4 relative z-10">
+      <div class="bg-white/80 backdrop-blur-md p-8 md:p-10 rounded-2xl shadow-xl animate-fade-in border border-white">
+        <div class="flex items-center mb-6">
+          <div class="bg-blue-100 p-3 rounded-lg mr-4">
+            <i class="fas fa-rocket text-blue-600 text-2xl"></i>
+          </div>
+          <h2 class="text-3xl font-bold text-gray-800">Projet Post-BUT</h2>
+        </div>
+        <p class="text-lg text-gray-700 leading-relaxed mb-4">
+          À l'issue de mon BUT Informatique, mon objectif était de poursuivre mes études en Master afin d'approfondir mes compétences en ingénierie logicielle et en architecture des systèmes d'information. N'ayant pas été retenu pour les Masters visés, j'ai pris la décision de m'insérer directement sur le marché du travail.
+        </p>
+        <p class="text-lg text-gray-700 leading-relaxed font-medium">
+          Je rejoindrai très prochainement <span class="text-blue-600 font-semibold">Straton Automation</span> en tant que développeur à part entière, où je pourrai continuer d'apporter ma contribution technique et m'épanouir au sein d'une équipe R&D stimulante.
+        </p>
+      </div>
+    </div>
+  </section>
+
   <!-- Compétences -->
   <section id="skills" class="py-20 bg-gray-50">
     <div class="max-w-6xl mx-auto px-4">
@@ -166,7 +188,7 @@
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
       
       <!-- Projet archeopass -->
-      <div class="project-card bg-white rounded-xl shadow-md p-6 animate-fade-in delay-100"
+      <div class="project-card bg-white rounded-xl shadow-md p-6 animate-fade-in delay-100 border-l-4 border-l-blue-500"
            onclick="toggleProject(this)">
         <div class="flex justify-between items-center">
           <div>
@@ -195,22 +217,21 @@
             <li>Endpoints REST pour création, lecture, mise à jour et suppression des réservations</li>
             <li>Envoi de notifications par e-mail lors de la réservation</li>
           </ul>
-          <h4 class="font-semibold mb-2">Techniques & acquis</h4>
+          <h4 class="font-semibold mb-2 mt-4">Techniques & acquis</h4>
           <div class="flex flex-wrap gap-2">
-            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">PHP</span>
-            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">MVC</span>
-            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">HTTPS</span>
-            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">PHPUnit</span>
-            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Pair Programming</span>
-            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Revue de code</span>
-            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Sécurité RGPD</span>
-            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">REST</span>
+            <span class="tech-badge bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm font-medium border border-blue-100">PHP</span>
+            <span class="tech-badge bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm font-medium border border-blue-100">MVC</span>
+            <span class="tech-badge bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm font-medium border border-blue-100">HTTPS</span>
+            <span class="tech-badge bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm font-medium border border-blue-100">PHPUnit</span>
+            <span class="tech-badge bg-gray-50 text-gray-700 px-3 py-1 rounded-full text-sm font-medium border border-gray-200">Pair Programming</span>
+            <span class="tech-badge bg-gray-50 text-gray-700 px-3 py-1 rounded-full text-sm font-medium border border-gray-200">Revue de code</span>
+            <span class="tech-badge bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm font-medium border border-blue-100">REST</span>
           </div>
         </div>
       </div>
       
       <!-- Projet : Application mobile Android – Carnet de suivi de stage -->
-      <div class="project-card bg-white rounded-xl shadow-md p-6 animate-fade-in delay-200"
+      <div class="project-card bg-white rounded-xl shadow-md p-6 animate-fade-in delay-200 border-l-4 border-l-blue-500"
           onclick="toggleProject(this)">
         <div class="flex justify-between items-center">
           <div>
@@ -248,21 +269,20 @@
             <li>Optimisation des performances : temps d’exécution des suites tests ÷ 2</li>
           </ul>
 
-          <h4 class="font-semibold mb-2">Techniques & acquis</h4>
+          <h4 class="font-semibold mb-2 mt-4">Techniques & acquis</h4>
           <div class="flex flex-wrap gap-2">
-            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Android SDK</span>
-            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">REST API</span>
-            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">JUnit 4</span>
-            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Espresso</span>
-            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Mockito</span>
-            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Git</span>
+            <span class="tech-badge bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm font-medium border border-blue-100">Android SDK</span>
+            <span class="tech-badge bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm font-medium border border-blue-100">REST API</span>
+            <span class="tech-badge bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm font-medium border border-blue-100">JUnit 4</span>
+            <span class="tech-badge bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm font-medium border border-blue-100">Espresso</span>
+            <span class="tech-badge bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm font-medium border border-blue-100">Mockito</span>
           </div>
         </div>
       </div>
 
       
       <!-- Projet : Chatbot RAG straton® -->
-      <div class="project-card bg-white rounded-xl shadow-md p-6 animate-fade-in delay-200"
+      <div class="project-card bg-white rounded-xl shadow-md p-6 animate-fade-in delay-200 border-l-4 border-l-blue-500"
           onclick="toggleProject(this)">
         <div class="flex justify-between items-center">
           <div>
@@ -281,39 +301,93 @@
               alt="Chatbot RAG straton"
               class="w-full h-55 object-cover rounded-lg mb-4">
 
-          <h4 class="font-semibold mb-2">Contexte</h4>
+          <h4 class="font-semibold mb-2 mt-4">Contexte</h4>
           <p class="text-gray-700 mb-4">
-            Stage – conception d’un chatbot RAG pour réduire de 40 % les tickets de support de niveau 1.
-            Indexation de centaines de pages PDF, réponses bilingues, confidentialité garantie.
+            Projet majeur de mon alternance chez Straton Automation : la conception d’un chatbot RAG pour réduire de 40 % les tickets de support de niveau 1. J'ai pris en charge le cycle complet : de l'indexation vectorielle des manuels PDF à la restitution bilingue par un LLM.
           </p>
 
-          <h4 class="font-semibold mb-2">Fonctionnalités</h4>
+          <h4 class="font-semibold mb-2">Fonctionnalités & Réalisations</h4>
           <ul class="list-disc list-inside text-gray-700 mb-4">
-            <li>Extraction &amp; découpe PDF automatisés</li>
-            <li>Recherche vectorielle FAISS &amp; embeddings MiniLM</li>
-            <li>Génération de réponses par Mistral-small&nbsp;3.1 / API Mistral</li>
-            <li>Interface Web Symfony + API Flask (ask / add / remove)</li>
-            <li>Journalisation et tests unitaires (100 tests automatisés)</li>
+            <li>Développement de l'extraction documentaire (PDF) avec PyMuPDF, incluant des filtres algorithmiques (rejet d'images monocouleurs et sous-dimensionnées).</li>
+            <li>Recherche vectorielle (Retrieval) via FAISS et génération avec Mistral AI (Mistral-small 3.1).</li>
+            <li><strong>Optimisation (C2) :</strong> Résolution d'une fuite mémoire critique en gérant le cycle de vie de l'instance du LLM, réduisant l'empreinte de la RAM de 20%.</li>
+            <li>Création d'une interface Web Symfony communiquant avec une API Flask backend.</li>
           </ul>
 
-          <h4 class="font-semibold mb-2">Techniques &amp; acquis</h4>
-          <div class="flex flex-wrap gap-2">
-            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Python 3.12</span>
-            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Flask 3</span>
-            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">LangChain</span>
-            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">FAISS</span>
-            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Mistral AI</span>
-            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Symfony</span>
-            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">RAG</span>
-            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">NLP</span>
-            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Git</span>
+          <h4 class="font-semibold mb-2">Savoir-être (C6) & Compétences</h4>
+          <p class="text-gray-700 mb-4">
+            Ce projet m'a permis de travailler en méthode <strong>Scrum</strong> au sein de l'équipe R&D. J'ai dû argumenter mes choix d'architecture (ex. API Mistral souveraine vs LLM local open-source) devant le directeur technique et collaborer en direct avec les autres ingénieurs.
+          </p>
+
+          <div class="flex flex-wrap gap-2 mt-4">
+            <span class="tech-badge bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm font-medium border border-blue-100">Python 3.12</span>
+            <span class="tech-badge bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm font-medium border border-blue-100">Flask 3</span>
+            <span class="tech-badge bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm font-medium border border-blue-100">FAISS</span>
+            <span class="tech-badge bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm font-medium border border-blue-100">Mistral AI</span>
+            <span class="tech-badge bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm font-medium border border-blue-100">RAG</span>
+            <span class="tech-badge bg-gray-50 text-gray-700 px-3 py-1 rounded-full text-sm font-medium border border-gray-200">Scrum</span>
+            <span class="tech-badge bg-gray-50 text-gray-700 px-3 py-1 rounded-full text-sm font-medium border border-gray-200">Architecture Logicielle (C1)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Projet : Build System (Nouveau projet d'alternance) -->
+      <div class="project-card bg-white rounded-xl shadow-md p-6 animate-fade-in delay-200 border-l-4 border-l-blue-500"
+          onclick="toggleProject(this)">
+        <div class="flex justify-between items-center">
+          <div>
+            <h3 class="text-xl font-bold text-gray-800">Build System Automatisé</h3>
+            <p class="text-blue-600 font-medium mt-1">DevOps & Backend · Python / Docker</p>
+          </div>
+          <div class="project-icon bg-blue-50 text-blue-500">
+            <i class="fas fa-chevron-down"></i>
+          </div>
+        </div>
+
+        <p class="text-gray-600 mt-3 leading-relaxed">
+          Conception d'un orchestrateur de compilation conteneurisé sous Docker géré par un Daemon Python. Suivi en temps réel des logs par SSE.
+        </p>
+
+        <div class="project-content mt-4">
+          <div class="bg-gray-100 rounded-lg h-55 flex items-center justify-center mb-4 border border-gray-200 overflow-hidden relative">
+            <!-- Remplacement d'image temporaire pour représenter Docker/Architecture -->
+            <div class="absolute inset-0 bg-gradient-to-br from-blue-500 to-indigo-600 opacity-90"></div>
+            <i class="fab fa-docker text-6xl text-white relative z-10 opacity-80"></i>
+            <i class="fas fa-cogs text-4xl text-white relative z-10 opacity-50 ml-4"></i>
+          </div>
+
+          <h4 class="font-semibold mb-2 mt-4">Contexte</h4>
+          <p class="text-gray-700 mb-4">
+            Deuxième mission d'envergure de mon alternance chez Straton Automation : restructurer le processus de compilation des runtimes cibles (ARM, x86) pour l'équipe R&D en garantissant la reproductibilité et l'isolation via le motif "Builder Pattern".
+          </p>
+
+          <h4 class="font-semibold mb-2">Fonctionnalités & Réalisations</h4>
+          <ul class="list-disc list-inside text-gray-700 mb-4">
+            <li>Création d'un <strong>Daemon Python</strong> agissant comme chef d'orchestre pour piloter des conteneurs éphémères Docker.</li>
+            <li>Gestion du cycle de vie des builds via des tickets JSON (pending, processing, completed).</li>
+            <li><strong>Optimisation des performances (C2) :</strong> Utilisation d'un <code>ThreadPoolExecutor</code> pour gérer les concurrences sans saturer le CPU/RAM de l'hôte. Réduction du temps de compilation ARM de 140s à 41s.</li>
+            <li>Implémentation d'une diffusion de logs en temps réel (streaming) vers le navigateur de l'utilisateur via la technologie <strong>Server-Sent Events (SSE)</strong>.</li>
+          </ul>
+
+          <h4 class="font-semibold mb-2">Savoir-être (C6) & Compétences</h4>
+          <p class="text-gray-700 mb-4">
+            Ce projet m'a permis de démontrer ma capacité à concevoir une architecture logicielle de bout en bout (C1). Les choix techniques (notamment SSE vs WebSockets/Polling) ont été justifiés lors des réunions d'équipe.
+          </p>
+
+          <div class="flex flex-wrap gap-2 mt-4">
+            <span class="tech-badge bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm font-medium border border-blue-100">Python</span>
+            <span class="tech-badge bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm font-medium border border-blue-100">Docker</span>
+            <span class="tech-badge bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm font-medium border border-blue-100">Server-Sent Events</span>
+            <span class="tech-badge bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm font-medium border border-blue-100">Architecture MVC</span>
+            <span class="tech-badge bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm font-medium border border-blue-100">Bash</span>
+            <span class="tech-badge bg-gray-50 text-gray-700 px-3 py-1 rounded-full text-sm font-medium border border-gray-200">DevOps (C2)</span>
           </div>
         </div>
       </div>
 
 
       <!-- Projet : Boutique Symfony — Panier, Doctrine & Sécurité -->
-      <div class="project-card bg-white rounded-xl shadow-md p-6 animate-fade-in delay-300"
+      <div class="project-card bg-white rounded-xl shadow-md p-6 animate-fade-in delay-300 border-l-4 border-l-blue-500"
           onclick="toggleProject(this)">
         <div class="flex justify-between items-center">
           <div>
@@ -354,23 +428,20 @@
             <li>Barre de navigation dynamique : compteur d’articles + login/logout</li>
           </ul>
 
-          <h4 class="font-semibold mb-2">Techniques &amp; acquis</h4>
+          <h4 class="font-semibold mb-2 mt-4">Techniques &amp; acquis</h4>
           <div class="flex flex-wrap gap-2">
-            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">PHP 8.2</span>
-            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Symfony 6</span>
-            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Doctrine ORM</span>
-            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Twig</span>
-            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Security</span>
-            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">REST</span>
-            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">PHPUnit</span>
-            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Git</span>
+            <span class="tech-badge bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm font-medium border border-blue-100">PHP 8.2</span>
+            <span class="tech-badge bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm font-medium border border-blue-100">Symfony 6</span>
+            <span class="tech-badge bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm font-medium border border-blue-100">Doctrine ORM</span>
+            <span class="tech-badge bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm font-medium border border-blue-100">Twig</span>
+            <span class="tech-badge bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm font-medium border border-blue-100">Security</span>
           </div>
         </div>
       </div>
 
       
       <!-- Projet : Application Android – École des Loustics -->
-      <div class="project-card bg-white rounded-xl shadow-md p-6 animate-fade-in delay-300"
+      <div class="project-card bg-white rounded-xl shadow-md p-6 animate-fade-in delay-300 border-l-4 border-l-blue-500"
           onclick="toggleProject(this)">
         <div class="flex justify-between items-center">
           <div>
@@ -408,14 +479,12 @@
             <li>Score final &amp; feedback immédiat, historique par utilisateur.</li>
           </ul>
 
-          <h4 class="font-semibold mb-2">Techniques &amp; acquis</h4>
+          <h4 class="font-semibold mb-2 mt-4">Techniques &amp; acquis</h4>
           <div class="flex flex-wrap gap-2">
-            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Android SDK</span>
-            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Java</span>
-            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">RecyclerView</span>
-            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">MVC</span>
-            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">SQLite</span>
-            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Git</span>
+            <span class="tech-badge bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm font-medium border border-blue-100">Android SDK</span>
+            <span class="tech-badge bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm font-medium border border-blue-100">Java</span>
+            <span class="tech-badge bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm font-medium border border-blue-100">RecyclerView</span>
+            <span class="tech-badge bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm font-medium border border-blue-100">SQLite</span>
           </div>
         </div>
       </div>
@@ -459,19 +528,36 @@
           </button>
         </form>
 
-        <div class="animate-fade-in delay-200">
-          <p class="mb-4">
-            <i class="fas fa-envelope text-blue-500"></i>
-            djibril.miliani@gmail.com
-          </p>
-          <p class="mb-4">
-            <i class="fab fa-github text-blue-500"></i>
-            <a href="https://github.com/Moxie1505" class="hover:underline">GitHub</a>
-          </p>
-          <p class="mb-4">
-            <i class="fas fa-phone text-blue-500"></i>
-            07 67 47 65 02
-          </p>
+        <div class="animate-fade-in delay-200 bg-white p-6 rounded-xl shadow-md flex flex-col justify-center">
+          <h3 class="text-xl font-bold text-gray-800 mb-6">Retrouvez-moi sur</h3>
+          
+          <a href="mailto:djibril.miliani@gmail.com" class="flex items-center p-3 hover:bg-gray-50 rounded-lg transition-colors mb-2 border border-transparent hover:border-gray-100">
+            <div class="bg-blue-50 p-3 rounded-full mr-4">
+              <i class="fas fa-envelope text-blue-600 text-xl"></i>
+            </div>
+            <span class="text-gray-700 font-medium">djibril.miliani@gmail.com</span>
+          </a>
+          
+          <a href="https://github.com/Moxie1505" target="_blank" class="flex items-center p-3 hover:bg-gray-50 rounded-lg transition-colors mb-2 border border-transparent hover:border-gray-100">
+            <div class="bg-gray-50 p-3 rounded-full mr-4">
+              <i class="fab fa-github text-gray-800 text-xl"></i>
+            </div>
+            <span class="text-gray-700 font-medium">GitHub / Moxie1505</span>
+          </a>
+          
+          <a href="https://www.linkedin.com/in/djibril-miliani-09ba46415/" target="_blank" class="flex items-center p-3 hover:bg-blue-50 rounded-lg transition-colors mb-2 border border-transparent hover:border-blue-100 group">
+            <div class="bg-blue-100 p-3 rounded-full mr-4 group-hover:bg-blue-600 transition-colors">
+              <i class="fab fa-linkedin-in text-blue-600 text-xl group-hover:text-white transition-colors"></i>
+            </div>
+            <span class="text-blue-700 font-semibold">Profil LinkedIn</span>
+          </a>
+          
+          <div class="flex items-center p-3 mt-2">
+            <div class="bg-green-50 p-3 rounded-full mr-4">
+              <i class="fas fa-phone text-green-600 text-xl"></i>
+            </div>
+            <span class="text-gray-700 font-medium">07 67 47 65 02</span>
+          </div>
         </div>
       </div>
     </div>

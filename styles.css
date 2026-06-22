@@ -1,7 +1,31 @@
+/* Importation de la police Outfit */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+body {
+  font-family: 'Outfit', sans-serif;
+  scroll-behavior: smooth;
+}
+
+/* Glassmorphism Navigation */
+.glass-nav {
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Effets sur les cartes de projets */
 .project-card {
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   overflow: hidden;
   cursor: pointer;
+  border: 1px solid transparent;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px -10px rgba(59, 130, 246, 0.15);
+  border-color: rgba(59, 130, 246, 0.2);
 }
 
 .project-content {
@@ -12,25 +36,77 @@
 }
 
 .project-card.expanded {
-  transform: scale(1.03);
-  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1),
-              0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  transform: scale(1.02);
+  box-shadow: 0 25px 50px -12px rgba(59, 130, 246, 0.25);
+  border-color: rgba(59, 130, 246, 0.3);
+  z-index: 10;
+  position: relative;
 }
 
 .project-card.expanded .project-content {
-  max-height: 1000px;
+  max-height: 1500px;
   opacity: 1;
+  margin-top: 1rem;
 }
 
 .project-icon {
-  transition: transform 0.3s ease;
+  transition: transform 0.4s ease;
+  background-color: #f3f4f6;
+  border-radius: 50%;
+  padding: 0.5rem;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-card:hover .project-icon {
+  background-color: #e0f2fe;
+  color: #3b82f6;
 }
 
 .project-card.expanded .project-icon {
   transform: rotate(180deg);
+  background-color: #3b82f6;
+  color: white;
 }
 
+/* Animations */
 @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px);} to { opacity: 1; transform: translateY(0);} }
-    .animate-fade-in { animation: fadeIn 0.8s ease-out forwards; }
-    .delay-100 { animation-delay: 0.1s;} .delay-200 { animation-delay: 0.2s;}
+  from { opacity: 0; transform: translateY(25px); } 
+  to { opacity: 1; transform: translateY(0); } 
+}
+
+.animate-fade-in { 
+  opacity: 0;
+  animation: fadeIn 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; 
+}
+
+.delay-100 { animation-delay: 0.1s; } 
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+
+/* Badges Tech */
+.tech-badge {
+  transition: all 0.2s ease;
+}
+
+.tech-badge:hover {
+  transform: scale(1.05);
+  background-color: #dbeafe;
+}
+
+/* Section Héro - Gradient Animé */
+.hero-gradient {
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 50%, #eff6ff 100%);
+  background-size: 200% 200%;
+  animation: gradientMove 8s ease infinite;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
